@@ -1,0 +1,51 @@
+<audio controls>
+  <source src="./processed_samples/cha.wav" type="audio/wav">
+</audio>
+
+<audio class="concha1" controls>
+  <source src="./processed_samples/concha1.wav" type="audio/wav">
+</audio>
+
+<video  width="400" height="400"
+       muted >
+  <source src="./videos/concha-cha.mp4" type="video/mp4">
+</video>
+
+<video  width="400" height="400"
+       muted accesskey="c">
+  <source src="./videos/concha-con.mp4" type="video/mp4">
+</video>
+
+
+
+<script>
+
+var v = document.getElementsByTagName("video")[0];
+
+var a = document.getElementsByTagName("audio")[0];
+a.onplaying = function() {
+    v.play();
+};
+
+var v1 = document.getElementsByTagName("video")[1];
+
+var a1 = document.getElementsByClassName("concha1")[0];
+a1.onplaying = function() {
+    v1.play();
+};
+
+document.addEventListener('keydown', (event) => {
+  const keyName = event.key;
+  if (keyName == 'c'){
+    a1.play()
+  } else
+  if (keyName == 'v'){
+    a.play()
+  }
+
+
+});
+
+
+
+</script>
