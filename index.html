@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Concha Drum Machine</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
 <style>
 body {font-family: "Raleway", Arial, sans-serif}
 .w3-row img {margin-bottom: -8px}
@@ -20,44 +21,45 @@ body {font-family: "Raleway", Arial, sans-serif}
     <a href="#about" class="w3-right w3-button w3-white">About</a>
   </header>
 
-  <!-- Photo Grid -->
-  <div class="w3-row">
-    <div class="w3-col s2"><video  width="100%" height="100%" src="./videos/concha-con.mp4" type="video/mp4" style="width:100%"></div>
+  <!-- Sample Player Grid -->
+  <div class="w3-row videos ">
+    <div class="w3-col s2"><video class="aux1" width="100%" height="100%" type="video/mp4" style="width:100%"></div>
 
-    <div class="w3-col s2"><video  width="100%" height="100%" src="./videos/concha-cha.mp4" type="video/mp4" style="width:100%"></div>
-  <div class="w3-row">
+    <div class="w3-col s2"><video class="aux2" width="100%" height="100%" type="video/mp4" style="width:100%"></div>
+
+        </div>
+  <div class="w3-row samples">
     <div class="w3-col s2">
-    <button onclick="this.firstChild.play()" class="btn btn-default"><audio class="concha1" ><source src="./processed_samples/concha1.wav" type="audio/wav"></audio></button>
+    <button onclick="samplePlay(aux1)" class="btn btn-default"><audio onplaying="videoPlay('aux1')" preload="preload" id="aux1" class="concha1" ><source type="audio/wav"></audio></button>
     </div>
     <div class="w3-col s2">
-    <button onclick="this.firstChild.play()" class="btn btn-default"><audio class="concha1" ><source src="./processed_samples/cha.wav" type="audio/wav"></audio></button>
+    <button onclick="samplePlay(aux2)" class="btn btn-default"><audio onplaying="videoPlay('aux2')" preload="preload" id="aux2" class="concha1" ><source type="audio/wav"></audio></button>
     </div>
   </div>
 
-  </div>
-  <div class="w3-row">
-    <div class="w3-col s2"><video  width="100%" height="100%" src="./videos/concha-kick.mp4" type="video/mp4" style="width:100%"></div>
-    <div class="w3-col s2"><video  width="100%" height="100%" src="./videos/concha-snare1.mp4" type="video/mp4" style="width:100%"></div>
-    <div class="w3-col s2"><video  width="100%" height="100%" src="./videos/concha-snare2.mp4" type="video/mp4" style="width:100%"></div>
-    <div class="w3-col s2"><video  width="100%" height="100%" src="./videos/concha-shaker.mp4" type="video/mp4" style="width:100%"></div>
-    <div class="w3-col s2"><video  width="100%" height="100%" src="./videos/concha-yoyobass.mp4" type="video/mp4" style="width:100%"></div>
+  <div class="w3-row videos">
+    <div class="w3-col s2"><video class="kick" width="100%" height="100%" type="video/mp4" style="width:100%"></div>
+    <div class="w3-col s2"><video class="snare" width="100%" height="100%" type="video/mp4" style="width:100%"></div>
+    <div class="w3-col s2"><video class="closeHat" width="100%" height="100%" type="video/mp4" style="width:100%"></div>
+    <div class="w3-col s2"><video class="openHat" width="100%" height="100%" type="video/mp4" style="width:100%"></div>
+    <div class="w3-col s2"><video class="bass" width="100%" height="100%" type="video/mp4" style="width:100%"></div>
     </div>
 
-    <div class="w3-row">
+    <div class="w3-row samples">
       <div class="w3-col s2">
-      <button onclick="this.firstChild.play()" class="btn btn-default"><audio class="concha1" ><source src="./processed_samples/kick.wav" type="audio/wav"></audio></button>
+      <button  onclick="samplePlay(kick)" class="btn btn-default"><audio onplaying="videoPlay('kick')" preload="preload" id="kick" class="concha1" ><source type="audio/wav"></audio></button>
       </div>
       <div class="w3-col s2">
-      <button onclick="this.firstChild.play()" class="btn btn-default"><audio class="concha1" ><source src="./processed_samples/snare1.wav" type="audio/wav"></audio></button>
+      <button onclick="samplePlay(snare)" class="btn btn-default"><audio onplaying="videoPlay('snare')" id="snare" class="concha1" ><source type="audio/wav"></audio></button>
       </div>
       <div class="w3-col s2">
-      <button onclick="this.firstChild.play()" class="btn btn-default"><audio class="concha1" ><source src="./processed_samples/snare2.wav" type="audio/wav"></audio></button>
+      <button onclick="samplePlay(closeHat)" class="btn btn-default"><audio onplaying="videoPlay('closeHat')" id="closeHat" class="concha1" ><source type="audio/wav"></audio></button>
       </div>
       <div class="w3-col s2">
-      <button onclick="this.firstChild.play()" class="btn btn-default"><audio class="concha1" ><source src="./processed_samples/shaker.wav" type="audio/wav"></audio></button>
+      <button onclick="samplePlay(openHat)" class="btn btn-default"><audio onplaying="videoPlay('openHat')" id="openHat" class="concha1" ><source type="audio/wav"></audio></button>
       </div>
       <div class="w3-col s2">
-      <button onclick="this.firstChild.play()" class="btn btn-default"><audio class="concha1" ><source src="./processed_samples/yoyobass.wav" type="audio/wav"></audio></button>
+      <button onclick="samplePlay(bass)" class="btn btn-default"><audio onplaying="videoPlay('bass')" id="bass" class="concha1" ><source type="audio/wav"></audio></button>
       </div>
     </div>
   </div>
@@ -95,7 +97,7 @@ body {font-family: "Raleway", Arial, sans-serif}
 
 
 
-<video  width="100%" height="100%"
+<!-- <video  width="100%" height="100%"
        muted >
   <source src="./videos/concha-cha.mp4" type="video/mp4">
 </video>
@@ -103,9 +105,14 @@ body {font-family: "Raleway", Arial, sans-serif}
 <video  width="100%" height="100%"
        muted accesskey="c">
   <source src="./videos/concha-con.mp4" type="video/mp4">
-</video>
+</video> -->
 
 
 
-
+<script src="config.js"></script>
 <script src="sample-player.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    videosLoad();
+  });
+</script>
