@@ -1,4 +1,4 @@
-{
+var config = {
   "version": 1,
   "createdDate": "2017-11-11T00:00:00.000Z",
   "audioDir": "./processed_samples/",
